@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>中華道藏 · 神印預覽</title>
+<style>
+  body{margin:0;background:#14100a;color:#efe6d3;font-family:"Noto Serif TC","Songti TC",serif;
+    display:flex;flex-direction:column;align-items:center;padding:48px 20px 60px;}
+  h1{color:#e9c95c;letter-spacing:6px;font-size:24px;margin:0 0 8px;}
+  .sub{color:#b6a98d;font-size:14px;margin-bottom:34px;letter-spacing:2px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;width:100%;max-width:1080px;}
+  .cell{display:flex;flex-direction:column;align-items:center;gap:12px;}
+  .cell .name{font-size:16px;color:#efe6d3;letter-spacing:2px;}
+  .cell .cat{font-size:12px;color:#7d7157;letter-spacing:2px;}
+</style>
+</head>
+<body>
+<h1>中華道藏 · 神印</h1>
+<div class="sub">每位神仙皆得硃紅玉印一顆 · 依分類取色取符</div>
+<div class="grid" id="g"></div>
+<script>
+const CAT={
+  "三清四御":{accent:"#e9c95c",symbol:"道"},"星宿斗部":{accent:"#9db6ff",symbol:"星"},
+  "雷部護法":{accent:"#c08bff",symbol:"雷"},"幽冥地府":{accent:"#7fa3b5",symbol:"幽"},
+  "山川水澤":{accent:"#58d4bd",symbol:"水"},"八仙":{accent:"#e8b44a",symbol:"蓮"},
+  "財神":{accent:"#f0c05a",symbol:"寶"},"福祿壽喜":{accent:"#ef8fae",symbol:"福"},
+  "民間神祇":{accent:"#e06a5a",symbol:"龕"},"上古神話":{accent:"#6fd0a8",symbol:"龍"},
+  "文教醫藥":{accent:"#9cc77a",symbol:"文"},"歷史人物神化":{accent:"#d19a6a",symbol:"忠"}
+};
+function layout(n){
+  if(n===4)return [[82,102,44],[118,102,44],[82,156,44],[118,156,44]];
+  if(n===3)return [[100,96,40],[100,134,40],[100,172,40]];
+  if(n===2)return [[100,104,48],[100,158,48]];
+  return [[100,132,60]];
+}
+function emblem(name,category,i){
+  const c=CAT[category]||{accent:"#d4af37",symbol:"道"};
+  const chars=[...name]; const slots=layout(chars.length);
+  const gid="em"+i;
+  let ns="";
+  for(let k=0;k<chars.length;k++){const s=slots[k];
+    ns+=`<text x="${s[0]}" y="${s[1]}" text-anchor="middle" font-size="${s[2]}" fill="#f5efdd" font-family="KaiTi,'Noto Serif TC',serif" font-weight="700">${chars[k]}</text>`;}
+  const corners=[[14,14],[172,14],[14,172],[172,172]].map(([x,y])=>
+    `<g stroke="${c.accent}" stroke-width="2" fill="none" opacity="0.85"><path d="M ${x+6} ${y} h 8 v 8 h -8 z"/></g>`).join("");
+  return `<svg width="260" height="260" viewBox="0 0 200 200">
+    <defs><radialGradient id="${gid}" cx="38%" cy="30%" r="90%">
+      <stop offset="0%" stop-color="#b23b34"/><stop offset="55%" stop-color="#9c2c26"/><stop offset="100%" stop-color="#7c1f1b"/>
+    </radialGradient></defs>
+    <rect x="6" y="6" width="188" height="188" rx="26" fill="url(#${gid})" stroke="#5f1613" stroke-width="2"/>
+    ${corners}
+    <rect x="18" y="18" width="164" height="164" rx="18" fill="none" stroke="${c.accent}" stroke-width="1.4" opacity="0.5"/>
+    <text x="100" y="56" text-anchor="middle" font-size="26" font-weight="700" fill="${c.accent}" font-family="KaiTi,'Noto Serif TC',serif">${c.symbol}</text>
+    ${ns}
+    <text x="100" y="188" text-anchor="middle" font-size="11" fill="${c.accent}" opacity="0.8" font-family="KaiTi,'Noto Serif TC',serif">${category}</text>
+  </svg>`;
+}
+const list=[
+  ["元始天尊","三清四御"],["玉皇大帝","三清四御"],["鐵拐李","八仙"],["呂洞賓","八仙"],
+  ["媽祖","山川水澤"],["閻羅王","幽冥地府"],["趙公明","財神"],["文昌帝君","福祿壽喜"],
+  ["嫦娥","上古神話"],["關聖帝君","歷史人物神化"],["城隍爺","民間神祇"],["藥王","文教醫藥"]
+];
+const g=document.getElementById("g");
+list.forEach(([name,cat],i)=>{
+  const d=document.createElement("div"); d.className="cell";
+  d.innerHTML=emblem(name,cat,i)+`<div class="name">${name}</div><div class="cat">${cat}</div>`;
+  g.appendChild(d);
+});
+</script>
+</body>
+</html>

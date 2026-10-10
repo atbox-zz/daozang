@@ -1,0 +1,7 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "中華道藏主視窗預設能力",
+  "windows": ["main"],
+  "permissions": ["core:default", "opener:default"]
+}

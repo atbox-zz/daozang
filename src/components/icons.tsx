@@ -1,20 +1,16 @@
-// 品牌太極標與導覽圖示（內聯 SVG，無外部依賴）
+// 品牌太極標與導覽圖示
+// 太極標誌改用使用者提供之黑白陰陽魚圖
+import taijiImg from "../assets/taiji.png";
+
 export function TaijiMark({ size = 44 }: { size?: number }) {
-  const c = size / 2, r = size * 0.40, r2 = r / 2, dot = r * 0.12;
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-      <circle cx={c} cy={c} r={r} fill="#16110a" stroke="#d4af37" strokeWidth={size * 0.03} />
-      <path
-        d={`M ${c - r} ${c} a ${r} ${r} 0 0 1 ${r * 2} 0 a ${r2} ${r2} 0 0 1 ${-r2} ${-r2} a ${r2} ${r2} 0 0 1 ${-r2} ${r2} z`}
-        fill="#f3ead6"
-      />
-      <path
-        d={`M ${c + r} ${c} a ${r} ${r} 0 0 1 ${-r * 2} 0 a ${r2} ${r2} 0 0 1 ${r2} ${-r2} a ${r2} ${r2} 0 0 1 ${r2} ${r2} z`}
-        fill="#050505"
-      />
-      <circle cx={c - r2} cy={c} r={dot} fill="#050505" />
-      <circle cx={c + r2} cy={c} r={dot} fill="#f3ead6" />
-    </svg>
+    <img
+      src={taijiImg}
+      width={size}
+      height={size}
+      alt="太極"
+      style={{ display: "block", borderRadius: size * 0.12 }}
+    />
   );
 }
 

@@ -31,6 +31,7 @@ export const curatedDeities = [
   { name: "廉貞星君", alias: "北斗第五玉衡宮廉貞星君", category: "星宿斗部", subcategory: "北斗七星", title: "主忠貞、掌權柄", gender: "男", dynasty: "上古", origin: "《北斗經》", description: "北斗第五玉衡宮主星，主廉潔忠貞、掌人間權柄榮耀。", keywords: "北斗 廉貞 玉衡" },
   { name: "武曲星君", alias: "北斗第六開陽宮武曲星君", category: "星宿斗部", subcategory: "北斗七星", title: "主武勇、掌財富", gender: "男", dynasty: "上古", origin: "《北斗經》", description: "北斗第六開陽宮主星，主武勇剛毅、掌人間財富貴顯。", keywords: "北斗 武曲 開陽" },
   { name: "破軍星君", alias: "北斗第七搖光宮破軍星君", category: "星宿斗部", subcategory: "北斗七星", title: "主破舊立新", gender: "男", dynasty: "上古", origin: "《北斗經》", description: "北斗第七搖光宮主星，主變革、破舊立新，掌消耗與開創。", keywords: "北斗 破軍 搖光" },
+  { name: "斗姆元君", alias: "斗母、斗姥、圓明道姥天尊", category: "星宿斗部", subcategory: "斗部", title: "北斗之母、眾星之母", gender: "女", dynasty: "上古", origin: "《太上玄靈北斗本命延生真經》", description: "斗部至尊女神，為北斗眾星之母，三目四首八臂，掌天之斗柄、統攝周天列宿，主注生護命、消災解厄。", keywords: "斗姆 斗母 斗姥 北斗 星主 注生" },
   { name: "司命星君", alias: "南斗第一天府宮司命星君", category: "星宿斗部", subcategory: "南斗六星", title: "主生命、掌福壽", gender: "男", dynasty: "上古", origin: "《南斗經》", description: "南斗六星之首，主延壽司命，掌人間生命福祿，南斗主生。", keywords: "南斗 司命 天府 延壽" },
   { name: "司祿星君", alias: "南斗第二天相宮司祿星君", category: "星宿斗部", subcategory: "南斗六星", title: "主爵祿、掌富貴", gender: "男", dynasty: "上古", origin: "《南斗經》", description: "南斗第二天相宮主星，主爵祿官位，掌人間榮華富貴。", keywords: "南斗 司祿 天相 祿" },
   { name: "延壽星君", alias: "南斗第三天梁宮延壽星君", category: "星宿斗部", subcategory: "南斗六星", title: "主長壽、添壽算", gender: "男", dynasty: "上古", origin: "《南斗經》", description: "南斗第三天梁宮主星，主延年益壽、添增壽算。", keywords: "南斗 延壽 天梁" },
@@ -59,6 +60,10 @@ export const curatedDeities = [
   { name: "關元帥", alias: "關聖帝君、關羽", category: "雷部護法", subcategory: "護法", title: "護法伏魔、忠義之神", gender: "男", dynasty: "三國", origin: "《三國志》《歷代神仙通鑑》", description: "忠義千秋，被奉為關聖帝君，既為武財神、護法伽藍，又為伏魔大帝，三教共尊。", keywords: "護法 關公 忠義 武財神" },
   { name: "溫元帥", alias: "溫瓊、溫太保", category: "雷部護法", subcategory: "護法", title: "驅瘟逐疫、護佑", gender: "男", dynasty: "宋", origin: "《三教源流搜神大全》", description: "道教護法四帥之一，青面獠牙、手執金環，主驅除瘟疫、護佑蒼生。", keywords: "護法 溫瓊 驅瘟" },
   { name: "岳元帥", alias: "岳飛、岳武穆", category: "雷部護法", subcategory: "護法", title: "精忠護國、驅邪", gender: "男", dynasty: "宋", origin: "《宋史》", description: "南宋抗金名將，精忠報國，死後被奉為神，任護法神將，護國佑民、驅邪鎮煞。", keywords: "護法 岳飛 忠義" },
+  { name: "天蓬元帥", alias: "天蓬大元帥、天蓬真君、天篷元帥", category: "雷部護法", subcategory: "北極四聖", title: "北極四聖之首、統領神兵", gender: "男", dynasty: "上古", origin: "《太上北極伏魔神咒殺鬼錄》", description: "北極四聖之首，玄天上帝之屬神，統領天兵天將，主伏魔驅邪、護國安民，道教有「天蓬咒」傳世。", keywords: "北極四聖 天蓬 護法 伏魔 天篷" },
+  { name: "天猷元帥", alias: "天猷副元帥", category: "雷部護法", subcategory: "北極四聖", title: "北極四聖、掌神兵", gender: "男", dynasty: "上古", origin: "道教北帝信仰", description: "北極四聖之一，統御神兵神將，護持北帝，主驅邪護法、鎮壓妖氛。", keywords: "北極四聖 天猷 護法" },
+  { name: "翊聖真君", alias: "黑煞將軍、翊聖保德真君", category: "雷部護法", subcategory: "北極四聖", title: "北極四聖、鎮守黑煞", gender: "男", dynasty: "宋", origin: "道教北帝信仰", description: "北極四聖之一，又稱黑煞將軍，鎮守北方黑煞之氣，主驅邪衛道、護佑國土。", keywords: "北極四聖 翊聖 黑煞 護法" },
+  { name: "佑聖真君", alias: "玄武真君、佑聖北極真君", category: "雷部護法", subcategory: "北極四聖", title: "北極四聖、鎮北方", gender: "男", dynasty: "上古", origin: "道教北帝信仰", description: "北極四聖之一，即玄武之神，鎮守北方，主伏魔降妖、護持北帝，與真武大帝同源。", keywords: "北極四聖 佑聖 玄武 真武" },
 
   // ================= 六、幽冥地府 =================
   { name: "東嶽大帝", alias: "泰山神、天齊仁聖大帝", category: "幽冥地府", subcategory: "地府主宰", title: "掌幽冥、判生死", gender: "男", dynasty: "上古", origin: "《三教源流搜神大全》", description: "居泰山之巔，為冥府最高主宰，總管人間生死、幽冥魂魄，統率十殿閻王。", keywords: "幽冥 東嶽 泰山 地府" },
@@ -137,6 +142,9 @@ export const curatedDeities = [
   { name: "有應公", alias: "萬應公、百姓公", category: "民間神祇", subcategory: "陰廟", title: "收容孤魂、應求必應", gender: "男", dynasty: "明清", origin: "民間信仰", description: "收容無主孤魂之神，廟稱有應廟、大眾廟，信眾祈求有求必應、庇佑平安。", keywords: "有應公 孤魂 陰廟" },
   { name: "地基主", alias: "地基主公", category: "民間神祇", subcategory: "家宅神明", title: "守護宅基、宅內安寧", gender: "男", dynasty: "明清", origin: "閩臺民間信仰", description: "守護宅基與家宅之神，安宅前祭拜，祈求居家安寧、出入平安。", keywords: "地基主 家宅 安寧" },
   { name: "三山國王", alias: "巾山國王、明山國王、獨山國王", category: "民間神祇", subcategory: "客籍神明", title: "客家守護、鎮山安民", gender: "男", dynasty: "隋", origin: "廣東潮汕信仰", description: "廣東揭陽三山之神，隨客家人遷徙而傳播，為客家移民之守護神，庇佑鄉里。", keywords: "三山國王 客家 守護" },
+  { name: "玄天上帝", alias: "真武大帝、玄武上帝、北極佑聖真君", category: "民間神祇", subcategory: "北帝", title: "鎮北方、蕩魔伏妖", gender: "男", dynasty: "上古", origin: "《玄天上帝啟聖錄》", description: "道教與民間極崇之神，即真武大帝，披髮仗劍、足踏龜蛇，鎮守北方、蕩魔護世，臺灣民間尊為北極玄天上帝。", keywords: "玄天上帝 真武 玄武 北帝 蕩魔" },
+  { name: "齊天大聖", alias: "孫悟空、美猴王、大聖爺", category: "民間神祇", subcategory: "西遊神", title: "降妖伏魔、庇佑驅邪", gender: "男", dynasty: "唐", origin: "《西遊記》", description: "《西遊記》主角孫悟空，石猴得道、大鬧天宮後隨唐僧西行取經，降妖除魔，民間奉為驅邪護佑之神。", keywords: "齊天大聖 孫悟空 美猴王 驅邪 大聖" },
+  { name: "鬥戰勝佛", alias: "鬥戰聖佛、戰鬥勝佛、孫悟空成佛", category: "民間神祇", subcategory: "西遊神", title: "護法勝佛、降魔第一", gender: "男", dynasty: "唐", origin: "《西遊記》", description: "孫悟空西天取經圓滿後所證之佛號，位列三十五佛之一，主護法降魔、降伏心猿。", keywords: "鬥戰勝佛 孫悟空 勝佛 護法 戰鬥" },
 
   // ================= 十二、上古神話 =================
   { name: "女媧", alias: "女媧娘娘、媧皇", category: "上古神話", subcategory: "創世神", title: "摶土造人、煉石補天", gender: "女", dynasty: "創世", origin: "《淮南子》《風俗通》", description: "上古創世女神，摶黃土造人、煉五色石補天，被尊為人類之母與社稷之女神。", keywords: "創世 女媧 造人 補天" },

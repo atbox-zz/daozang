@@ -57,7 +57,7 @@ bun run tauri build
 bun run dev            # http://localhost:1420
 ```
 
-## 部署到 GitHub Pages https://atbox-zz.github.io/daozang
+## 部署到 GitHub Pages（https://atbox-zz.github.io/daozang/）
 
 本專案已內建 GitHub Actions 工作流（`.github/workflows/deploy.yml`），用 **Bun 建置、Vite base = `/daozang/`**，自動上傳至 Pages。
 

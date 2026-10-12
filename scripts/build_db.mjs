@@ -47,7 +47,9 @@ db.exec(`
     category TEXT DEFAULT '',
     svg_key TEXT DEFAULT '',
     meaning TEXT DEFAULT '',
-    description TEXT DEFAULT ''
+    description TEXT DEFAULT '',
+    image TEXT DEFAULT '',
+    origin TEXT DEFAULT ''
   );
 
   CREATE INDEX IF NOT EXISTS idx_deities_category ON deities(category);
@@ -65,10 +67,10 @@ for (const d of allDeities) {
 }
 
 const insT = db.prepare(
-  "INSERT INTO talismans (name,category,svg_key,meaning,description) VALUES (?,?,?,?,?)"
+  "INSERT INTO talismans (name,category,svg_key,meaning,description,image,origin) VALUES (?,?,?,?,?,?,?)"
 );
 for (const t of talismans) {
-  insT.run(t.name, t.category, t.svg_key, t.meaning, t.description);
+  insT.run(t.name, t.category, t.svg_key, t.meaning, t.description, t.image || "", t.origin || "");
 }
 
 const stats = {

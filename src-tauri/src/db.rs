@@ -30,6 +30,8 @@ pub struct Talisman {
     pub svg_key: String,
     pub meaning: String,
     pub description: String,
+    pub image: String,
+    pub origin: String,
 }
 
 #[derive(Debug, Serialize)]
@@ -73,6 +75,7 @@ fn row_to_deity(r: &rusqlite::Row) -> rusqlite::Result<Deity> {
 }
 
 const DEITY_COLS: &str = "id,name,alias,category,subcategory,title,gender,dynasty,origin,description,keywords";
+const TALISMAN_COLS: &str = "id,name,category,svg_key,meaning,description,image,origin";
 
 /// 分類與數量統計
 #[tauri::command]
@@ -189,7 +192,7 @@ pub fn search_deities(
 #[tauri::command]
 pub fn get_talismans(state: State<'_, DbState>, category: Option<String>) -> Result<Vec<Talisman>, String> {
     let conn = lock(&state)?;
-    let mut sql = "SELECT id,name,category,svg_key,meaning,description FROM talismans WHERE 1=1".to_string();
+    let mut sql = format!("SELECT {TALISMAN_COLS} FROM talismans WHERE 1=1");
     if let Some(c) = category {
         if !c.trim().is_empty() {
             sql.push_str(" AND category = ?1");
@@ -210,6 +213,8 @@ fn query_talismans(conn: &Connection, sql: &str, cat: Option<String>) -> Result<
                 svg_key: r.get(3)?,
                 meaning: r.get(4)?,
                 description: r.get(5)?,
+                image: r.get(6)?,
+                origin: r.get(7)?,
             })
         })
     } else {
@@ -221,6 +226,8 @@ fn query_talismans(conn: &Connection, sql: &str, cat: Option<String>) -> Result<
                 svg_key: r.get(3)?,
                 meaning: r.get(4)?,
                 description: r.get(5)?,
+                image: r.get(6)?,
+                origin: r.get(7)?,
             })
         })
     }
@@ -237,7 +244,7 @@ fn query_talismans(conn: &Connection, sql: &str, cat: Option<String>) -> Result<
 pub fn get_talisman(state: State<'_, DbState>, id: i64) -> Result<Option<Talisman>, String> {
     let conn = lock(&state)?;
     conn.query_row(
-        "SELECT id,name,category,svg_key,meaning,description FROM talismans WHERE id = ?1",
+        &format!("SELECT {TALISMAN_COLS} FROM talismans WHERE id = ?1"),
         params![id],
         |r| {
             Ok(Talisman {
@@ -247,6 +254,8 @@ pub fn get_talisman(state: State<'_, DbState>, id: i64) -> Result<Option<Talisma
                 svg_key: r.get(3)?,
                 meaning: r.get(4)?,
                 description: r.get(5)?,
+                image: r.get(6)?,
+                origin: r.get(7)?,
             })
         },
     )

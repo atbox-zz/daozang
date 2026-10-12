@@ -153,6 +153,28 @@ a { color: var(--gold-bright); text-decoration: none; }
 .talisman-card .mean { font-size: 12px; color: #6b5a3e; }
 .talisman-paper { background: var(--paper); border-radius: 14px; padding: 22px; }
 
+/* 符咒縮圖容器：固定高度，使道藏真符 PNG 與向量圖騰卡片視覺整齊 */
+.talisman-thumb { height: 190px; display: flex; align-items: center; justify-content: center; }
+.talisman-thumb .talisman-svg { height: 190px; width: auto; max-width: 100%; }
+.talisman-img { height: 190px; width: 100%; object-fit: contain; display: block; }
+/* 詳情彈窗內真符可較大 */
+.detail-paper .talisman-img { height: auto; max-height: 320px; width: auto; max-width: 100%; }
+.detail-paper .talisman-svg { height: 220px; width: auto; }
+
+/* 出處標籤：真符金色／意繪琥珀色／圖騰法器灰色 */
+.origin-tag {
+  display: inline-block; margin-top: 8px; font-size: 10.5px; line-height: 1.4;
+  padding: 2px 9px; border-radius: 999px; letter-spacing: .4px; text-align: center;
+  word-break: break-all; font-weight: 600;
+}
+.origin-tag.is-real { color: #8a6d1c; background: rgba(212,175,55,.20); border: 1px solid #c9a227; }
+.origin-tag.is-drawing { color: #9a5b16; background: rgba(217,140,30,.18); border: 1px solid #c9862b; }
+.origin-tag.is-totem { color: #6b6558; background: rgba(120,115,100,.16); border: 1px solid #9a927e; }
+/* 詳情彈窗為深色底，標籤改用亮色版 */
+.detail-panel .origin-tag { color: #e9c95c; background: rgba(212,175,55,.14); border: 1px solid rgba(212,175,55,.5); }
+.detail-panel .origin-tag.is-drawing { color: #e0a95a; background: rgba(217,140,30,.16); border-color: rgba(217,140,30,.55); }
+.detail-panel .origin-tag.is-totem { color: #b6ad97; background: rgba(150,143,125,.14); border-color: rgba(150,143,125,.5); }
+
 .detail-overlay { position: fixed; inset: 0; background: rgba(10,8,4,.72); display: flex; align-items: center; justify-content: center; z-index: 50; padding: 24px; }
 .detail-panel { background: #1d1710; border: 1px solid var(--gold); border-radius: 16px; max-width: 640px; width: 100%; max-height: 86vh; overflow:auto; padding: 30px 34px; position: relative; box-shadow: 0 0 60px rgba(212,175,55,.25); }
 .detail-panel h3 { margin: 0 0 4px; font-size: 26px; color: var(--gold-bright); }

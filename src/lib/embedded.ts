@@ -24,6 +24,8 @@ export type Talisman = {
   svg_key: string;
   meaning: string;
   description: string;
+  image?: string;
+  origin: string;
 };
 
 export type CategoryInfo = { category: string; count: number };

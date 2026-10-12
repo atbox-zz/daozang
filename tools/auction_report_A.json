@@ -1,0 +1,26 @@
+[
+  {
+    "key": "caishen",
+    "name": "招財進寶符",
+    "status": "replaced",
+    "origin": "來源：網路商城（品名：直發硃砂手寫招財進寶符）",
+    "source_url": "https://www.taobao.com/chanpin/1ec7be2eeab7bf0a8b6dfbf8927edcba.html",
+    "note": "淘寶商城商品圖，黃紙硃砂招財進寶符（1169x1940），滿版無外部背景，直接等比縮長邊至 900px（542x900），存 PNG。"
+  },
+  {
+    "key": "wenchang",
+    "name": "文昌符",
+    "status": "replaced",
+    "origin": "來源：網路實物照片（品名：文昌帝君硃砂符咒，原載知乎「山水道」）",
+    "source_url": "https://ecywang.com/pic/%E6%96%87%E6%98%8C%E7%AC%A6/",
+    "note": "非拍賣／商城商品圖，為道長手繪「文昌帝君」硃砂符咒實物照片（1080x1440，帶天師印），經圖庫站收錄；裁切掉深紫木桌背景後縮長邊至 900px（371x900）。因可下載之商城商品圖解析度不足（daofutang.com 僅 533x711 場景圖），改用此張高解析度實物照片，如實標註來源。"
+  },
+  {
+    "key": "taomu",
+    "name": "桃木劍",
+    "status": "replaced",
+    "origin": "來源：網路商城（品名：雷擊桃木劍—23cm）",
+    "source_url": "https://haohuo.jinritemai.com/ecommerce/trade/detail/index.html?origin_type=old_h5&id=3796256930138292486",
+    "note": "今日特賣（字節電商）JJ好物坊商品圖，23cm 雷擊桃木小劍帶紅色中國結流蘇，灰布自然背景（1200x1200），等比縮長邊至 900px（900x900），保留自然背景存 PNG。"
+  }
+]
